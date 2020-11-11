@@ -1,0 +1,6 @@
+- 出题人: xidaner
+- 难度: 简单
+- 考点: 查看是否会使用`BURP`爆破账号密码
+- 解法: `BURP`爆破admin密码即可，密码为admin 登录后得到flag。
+- flag: flag:{AdMiN_XXX_CtF}
+- 注意点: 无
