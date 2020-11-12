@@ -17,18 +17,20 @@
         // take the variables
         if(isset($_GET['username']))
         {
-            $id=$_GET['username'];
+            $id=@$_GET['username'];
+            $pwd=@$_GET['password'];
 // connectivity
-            $sql="SELECT * FROM users WHERE u_name id=$id";
+            $sql="SELECT * FROM users WHERE u_name='".$id."' and u_pwd='".$pwd."'";
             $result=mysql_query($sql);
+            $query=mysql_fetch_assoc($result);
             @$row = mysql_fetch_array($result);
-
-
+            if (@$query['id']!=1){
+                echo "<script>alert('登录失败，请检测用户名或密码是否正确！')</script>";
+            }
         }
-        else
-        {
 
-        }
+
+
         ?>
  <!DOCTYPE html>
  <html lang="zh">
@@ -178,7 +180,7 @@
                          <div class="heading">登录</div>
                          <?php
 
-                         if (@$id=='admin')
+                         if (@$query['id']==1)
                          {
                              echo "<div class=\"heading\">管理员登陆成功！</div>";
                              echo 'flag:{AdMiN_XXX_CtF}';

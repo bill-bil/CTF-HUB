@@ -16,9 +16,9 @@ if (!$con)
 
 @mysql_select_db($dbname,$con) or die ( "Unable to connect to the database: $dbname");
 // take the variables
-if(isset($_POST['action']))
+if(isset($_POST['username']))
 {
-    $id=@$_POST['action'];;
+    $id=@$_POST['username'];;
 // connectivity
     $sql="SELECT * FROM users WHERE u_name='$id'";
     $result=mysql_query($sql);

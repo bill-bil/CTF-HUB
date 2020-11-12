@@ -53,7 +53,7 @@
 <script src='./js/jquery.js'></script>
 <div class="htmleaf-container">
     <div class="htmleaf-content" >
-        <input  name="action" type="text" id="input" onkeydown="save();"  placeholder="注入点！" value=""  />
+        <input  name="username" type="text" id="input" onkeydown="save();"  placeholder="注入点！" value=""  />
     </div>
 </div>
 <script type="text/javascript">
